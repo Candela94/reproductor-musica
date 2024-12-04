@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de música</title>
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+    <!-- ponemos id para js, class para suit css -->
+
+    <div id="ListaCanciones" class="Lista">
+        <!-- <div class="Lista-cancion"></div> -->
+    </div>
+
+
+
+
+
+
+
+    <script>
+
+        const listaCanciones = ["Let's stay together", "Riders on the storm", "Alone again", "Last train to London", "More than a woman"]
+        const listaArtistas = ["All Green", "The Doors", "Pepe", "Manu", "BeeGees"]
+
+        const divCanciones = document.getElementById("ListaCanciones");
+
+
+
+        listaCanciones.forEach((cancion, i) => {
+
+            console.log(`${cancion} - id: ${i}`);
+
+
+            //innerHTML
+
+            divCanciones.innerHTML += `<div class="Lista-cancion"> ${cancion} <br </div>`;
+        
+
+
+        });
+
+
+
+    </script>
+
+</body>
+
+
+
+
+
+</html>
