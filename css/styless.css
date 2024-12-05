@@ -1,0 +1,61 @@
+
+
+:root{
+    font-size: 14px;
+}
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+.Body{
+    
+font-family: poppins;
+    
+}
+
+.Lista{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+
+
+
+
+#tema3{
+    font-family: poppins;
+    padding: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: lime;
+    margin: 1em;
+}
+
+
+.btnNextBack{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+}
+
+
+
+.btnNextBackPause-button{
+    border: none;
+    padding: 1em;
+    border-radius: 20px;
+    
+}
+
+.btnNextBack-icon{
+    
+}

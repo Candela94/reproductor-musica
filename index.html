@@ -6,20 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reproductor de música</title>
 
-
+<script defer src="./js/js.js"></script>
+<link rel="stylesheet" href="./css/styless.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 
 </head>
 
 
 
 
-<body>
+<body class="Body">
 
 
     <!-- ponemos id para js, class para suit css -->
 
     <div id="ListaCanciones" class="Lista">
         <!-- <div class="Lista-cancion"></div> -->
+        
+    </div>
+    
+
+    <button id="tema3">Tema 3</button>
+
+    <div class="btnNextBack">
+
+        <!-- boton next -->
+        <button class="btnNextBackPause-button" id="btnBack"><i class="fa-solid fa-backward btnNextBack-icon"></i></button>
+
+        <!-- botón pause -->
+        <button class="btnNextBackPause-button" id="btnPause"><i class="fa-solid fa-pause btnNextBack-icon"></i></button>
+
+
+        <!-- botón back -->
+        <button class="btnNextBackPause-button" id="btnNext"><i class="fa-solid fa-forward btnNextBack-icon"></i></button>
+
     </div>
 
 
@@ -27,33 +47,7 @@
 
 
 
-
-    <script>
-
-        const listaCanciones = ["Let's stay together", "Riders on the storm", "Alone again", "Last train to London", "More than a woman"]
-        const listaArtistas = ["All Green", "The Doors", "Pepe", "Manu", "BeeGees"]
-
-        const divCanciones = document.getElementById("ListaCanciones");
-
-
-
-        listaCanciones.forEach((cancion, i) => {
-
-            console.log(`${cancion} - id: ${i}`);
-
-
-            //innerHTML
-
-            divCanciones.innerHTML += `<div class="Lista-cancion"> ${cancion} <br </div>`;
-        
-
-
-        });
-
-
-
-    </script>
-
+   
 </body>
 
 
