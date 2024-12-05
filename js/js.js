@@ -101,10 +101,10 @@ divCanciones.forEach( (divCancion, i)  => {
 
 function imprimirReproduciendo(){
 
+    
     const song = listaCanciones[idCancionActual];  
-        const artist = listaArtistas[idCancionActual];
-        console.log("Artista: " +artist+ " Canción: "+song);
-
+    const artist = listaArtistas[idCancionActual];
+    console.log("Artista: " +artist+ " Canción: "+song);
 
         divPlayingSong.innerHTML = `<div> canción: ${song} </br> artista: ${artist} </div>`;
         //no ponenos += porque no queremos que agregue elementos en pantalla, sino qe queremos sobreescribir los temas que estamos escuchando 
@@ -136,6 +136,7 @@ idCancionActual++;
 
 //tarea: revisar que no me pase de la última canción, y que empiece por la primera, y lo mismo al revés (tienes qhacer la función imprimirResultado que ha hecho antes el profe)
 
+//buscar etiqueta audio e investigar, para poner sonidos
 
 
 
@@ -152,24 +153,4 @@ idCancionActual++;
 
 
 
-// const ListaCanciones= document.getElementById('ListaCanciones');  //Aquí es donde se van a agregar los divs
-
-// listaCanciones.forEach(   (nombre,i) =>{
-
-//     //crear un nuevo div
-//     const div= document.createElement("div");
-
-//     //agregar contenido al div
-//     div.textContent = `Nombre ${nombre}`;
-
-//     //asignamos id único al div, basado en su índice del array
-//     div.id = `div ${i}`;
-
-//     //agregamos clase para estilos en css
-//     div.classList.add("Lista-tracks");
-
-//     //Añadimos div al contenedor 
-//     ListaCanciones.appendChild(div);
-
-// });
 
