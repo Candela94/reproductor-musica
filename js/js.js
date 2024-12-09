@@ -2,9 +2,11 @@
 
 
 
-        const listaCanciones = ["Let's stay together", "Riders on the storm", "Black magic woman", "Walk on the wildside" , "More than a woman"]
+        const listaCanciones = ["Otra vez", "Pro-Love", "Ay que desgracia", "Flores" , "uwu^^"]
 
-        const listaArtistas = ["All Green", "The Doors", "Santana", "Lou Reed", "BeeGees"]
+        const listaArtistas = ["La Élite", "GRLS", "Daveartt", "Latin Mafia", "Rusowsky"]
+
+        const ListaImg = ["img/cancion-1.jpeg", "img/cancion-2.jpeg", "img/cancion-3.jpeg", "img/cancion-4.webp", "img/cancion-5.png"]
 
 
 
@@ -23,6 +25,8 @@
 
             const song = listaCanciones[i];  //puedo poner song tb (a parte de cancion) porque forEach ya me devuelve canción
             const artist = listaArtistas[i];
+            const img = ListaImg[i];
+            
 
 
             //innerHTML
@@ -31,7 +35,7 @@
 
             //puedo diseñar el div en el propio archivo html para ver como quedaría en pantalla, para despues copiarlo y pegarlo aquí en innerHTML:
 
-            divListaCanciones.innerHTML += `<div id="${i}" class="Lista-cancion"> ${song} <br> ${artist} <br> Track ${i} </div>`;
+            divListaCanciones.innerHTML += `<div id="${i}" class="Lista-cancion"> ${song} <br> ${artist} <br> Track ${i}  </div>`;
         
 
 
@@ -98,15 +102,19 @@ divCanciones.forEach( (divCancion, i)  => {
 
 });
 
+// const imagen = ListaImg[i];
 
 function imprimirReproduciendo(){
 
     
     const song = listaCanciones[idCancionActual];  
     const artist = listaArtistas[idCancionActual];
+    // imagen = ListaImg[idCancionActual];
+     
+
     console.log("Artista: " +artist+ " Canción: "+song);
 
-        divPlayingSong.innerHTML = `<div> canción: ${song} </br> artista: ${artist} </div>`;
+        divPlayingSong.innerHTML = `<div> canción: ${song} </br> artista: ${artist}</div>`;
         //no ponenos += porque no queremos que agregue elementos en pantalla, sino qe queremos sobreescribir los temas que estamos escuchando 
 
 }
@@ -119,19 +127,18 @@ function imprimirReproduciendo(){
 
 
 const btnSig = document.querySelector("btnNext")
-
-
 const btnAnt = document.querySelector("btnBack")
-
 let idCancionActual = 0; //canción inicial 
 
 
 
 btnSig.addEventListener("click", () => {
-idCancionActual++;
 
-
+  
 });
+
+
+
 
 
 //tarea: revisar que no me pase de la última canción, y que empiece por la primera, y lo mismo al revés (tienes qhacer la función imprimirResultado que ha hecho antes el profe)
