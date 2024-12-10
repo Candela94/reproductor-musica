@@ -1,43 +1,52 @@
-
-
-:root{
+:root {
     font-size: 14px;
 }
 
 
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
 }
 
 
-.Body{
+.Body {
     display: flex;
     flex-direction: column;
     gap: 32px;
-font-family: poppins;
-margin: 14px;
-background-color: #333031;
-color:#F1EBDD ;
-height: 100vh;
-    
+    font-family: poppins;
+    margin: 14px;
+    background-color: #333031;
+    color: #F1EBDD;
+    height: 100vh;
+
 }
 
-.Lista{
+.Lista {
     display: flex;
+    margin: 1em;
     flex-direction: column;
     gap: 1em;
-    padding: 1em;
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #4d484a;
+}
+
+
+
+
+.Lista-cancion {
+    padding-bottom: 0.3em;
+    border-bottom: 0.3px solid #F1EBDD;
 }
 
 
 
 
 
-#tema3{
+#tema3 {
     font-family: poppins;
     padding: 1em;
     border: none;
@@ -47,35 +56,39 @@ height: 100vh;
 }
 
 
-#btnNextBack{
+#btnNextBack {
 
     display: flex;
-    gap: 32px;
+    gap: 16px;
     justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: solid 0.3px #FEBAD0;
+    border-radius: 20px
 
 
-    
-   
 
 }
 
 
 
-.btnNextBackPause-button{
-    
+.btnNextBackPause-button {
+
     border: none;
     padding: 1em;
     border-radius: 40%;
     background-color: #FEBAD0;
-   
-    
+
+
 }
 
-.btnNextBack-icon{
+.btnNextBack-icon {}
+
+
+.isActive {
     
-}
+    font-size: 16px;
+    font-style: bold;
+    border-bottom: solid 2px #F1EBDD;
 
-
-.active {
-    background-color: aqua;
 }

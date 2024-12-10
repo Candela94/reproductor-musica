@@ -7,30 +7,30 @@ const lista_canciones = [
 
     { artista: "La Élite",
         url:"./music/otra-vez.mp3",
-        img:  "./img/cancion-1",
+        img:  "./img/cancion1.jpeg",
         titulo:"Otra vez"},
 
     { artista: "Pro-Love",
         url:"./music/pro-love.mp3",
-        img: "url",
+        img: ".img/cancion2.jpg",
         titulo:"GRLS"},
 
 
     { artista: "Ay que desgracia",
         url:"./music/desgracia.mp3",
-        img:"./img/cancion-3",
+        img:"./img/cancion3.jpeg",
         titulo:"Daveartt"},
 
 
     { artista: "Latin Mafia",
         url:"./music/julieta.mp3",
-        img:"./img/cancion-4",
+        img:"./img/cancion4.webp",
         titulo:"Julieta"},
 
 
     { artista: "so so",
         url:"./music/rusowsky.mp3",
-        img:"./img/cancion-5",
+        img:"./img/cancion5.png",
         titulo:"Rusowsky"}
 ];
 
@@ -41,31 +41,33 @@ const lista_canciones = [
 
 const divListaCanciones = document.getElementById("ListaCanciones");
 
-// -----------------------------------------
+// -------------------------------------------------------------------
 //3. Botones
-// -----------------------------------------
+// ------------------------------------------------------------------
 
 const btnSig = document.querySelector("#btnNext");
 const btnAnt = document.querySelector("#btnBack");
-const btnPausa = document.querySelector("#btnPausa");
+
+
+const btnPausa = document.querySelector("#btnPause");
+const btnPlay = document.querySelector("#btnPlay");
+
+
 const btnTema3 = document.querySelector("#tema3");
 
+// -----------------------------------------------------------------
+
+const divCanciones = document.querySelectorAll(".Lista-cancion");
+
+const divPlayingSong = document.querySelector("#playingSong");
 
 const audioPlayer = document.querySelector("audio"); 
-const divCanciones = document.querySelectorAll(".Lista-cancion");
-const divPlayingSong = document.querySelector("#playingSong");
-// const imagenesCanciones= document.querySelector("#imagenesCanciones");
 
 
 let idCancionActual = 0; //canción inicial 
 
 
-const handleReproducir = ()=>{
-    audioPlayer.pause();
-}
-const pausar = () => {
-    audioPlayer.pause();
-}
+
 
 
 // -----------------------------------------
@@ -87,18 +89,45 @@ function imprimirReproduciendo() {
     console.log("Artista: " + artist + " Canción: " + song);
 
     divPlayingSong.innerHTML = `<div> 
-    <img class imagenReproduciendo" src= "${img} alt="${song}"/>
-    Canción: ${song} id ${idCancionActual} </br> Artista: ${artist} ${img}
-    </div>`;
-    //no ponenos += porque no queremos que agregue elementos en pantalla, sino qe queremos sobreescribir los temas que estamos escuchando 
+                            <img class="imagenReproduciendo" src= "${img} alt="${song}"/>
+                            ${song}  ${idCancionActual} </br>  ${artist} 
+                            </div>`;
 
-
-    //cambiar el source de nuestro audio HTML
-    // console.log[audioPlayer];
-    // audioPlayer.src =[idCancionActual];
-
+    //cambiar el source de nuestro reproductor html 
+    console.log(audioPlayer);
+    audioPlayer.src = lista_canciones[idCancionActual].url;
+ 
 
 };
+
+
+function actualizarIsActive() {
+
+
+    //Quitamos la clase isActive a todas las canciones
+
+    document.querySelectorAll(".Lista-cancion").forEach((song) => {
+        song.classList.remove('isActive');
+    });
+
+
+    const cancionActual = document.getElementById("idCancionActual");
+    if(cancionActual){
+
+        cancionActual.classList.add('isActive');
+    }
+    
+};
+
+
+
+
+
+// -----------------------------------------
+//5. Event Listeners
+// -----------------------------------------
+
+
 
 
 
@@ -117,10 +146,10 @@ btnSig.addEventListener("click", () => {
     }
 
 imprimirReproduciendo();
+actualizarIsActive();
 
  
 });
-
 
 
 btnBack.addEventListener("click", () => {
@@ -135,11 +164,36 @@ btnBack.addEventListener("click", () => {
     console.log(idCancionActual);
 
     imprimirReproduciendo();
-
+    actualizarIsActive();
 
 
 
 });
+
+
+
+
+
+const handleReproducir = () => {
+audioPlayer.play();
+
+}
+
+
+const handlePausar = () => {
+audioPlayer.pause();
+}
+
+
+
+btnPlay.addEventListener("click",handleReproducir);
+btnPausa.addEventListener("click", handlePausar);
+
+
+
+
+
+
 
 
 
@@ -149,7 +203,6 @@ btnTema3.addEventListener("click", () => {
     idCancionActual = 2;
     imprimirReproduciendo();
 });
-
 
 
 
@@ -211,16 +264,6 @@ divCanciones.forEach((divCancion, i) => {
 
 
 
-// btnPausa.addEventListener("click", (handleReproducir)=>
-
-
-
-// )};
-
-
-// btnPlay.addEventListener("click", (handlePausar)=>
-
-// )};
 
 
 
