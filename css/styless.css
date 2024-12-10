@@ -15,9 +15,14 @@
 
 
 .Body{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 font-family: poppins;
 margin: 14px;
+background-color: #333031;
+color:#F1EBDD ;
+height: 100vh;
     
 }
 
@@ -37,26 +42,40 @@ margin: 14px;
     padding: 1em;
     border: none;
     border-radius: 8px;
-    background-color: lime;
+    background-color: #FEBAD0;
     margin: 1em;
 }
 
 
-.btnNextBack{
+#btnNextBack{
+
     display: flex;
-    justify-content: space-between;
-    padding: 2em;
+    gap: 32px;
+    justify-content: center;
+
+
+    
+   
+
 }
 
 
 
 .btnNextBackPause-button{
+    
     border: none;
     padding: 1em;
-    border-radius: 20px;
+    border-radius: 40%;
+    background-color: #FEBAD0;
+   
     
 }
 
 .btnNextBack-icon{
     
+}
+
+
+.active {
+    background-color: aqua;
 }

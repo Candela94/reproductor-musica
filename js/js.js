@@ -1,47 +1,36 @@
-// --------------------------------------
-//1.Nuestros datos
-// --------------------------------------
 
 
-// const listaCanciones = ["Otra vez", "Pro-Love", "Ay que desgracia", "Flores", "uwu^^"]
-
-// const listaArtistas = ["La Élite", "GRLS", "Daveartt", "Latin Mafia", "Rusowsky"]
-
-// const ListaImg = ["img/cancion-1.jpeg", "img/cancion-2.jpeg", "img/cancion-3.jpeg", "img/cancion-4.webp", "img/cancion-5.png"]
-
-// const listaMp3 = ["url1", "url2"]
 
 
-// esto es una manera mas rapida de acceder a los objetos con sus propiedades definidas
 
 const lista_canciones = [
 
     { artista: "La Élite",
-        url:"",
-        img:"url",
+        url:"./music/otra-vez.mp3",
+        img:  "./img/cancion-1",
         titulo:"Otra vez"},
 
     { artista: "Pro-Love",
-        url:"",
-        img:"url",
+        url:"./music/pro-love.mp3",
+        img: "url",
         titulo:"GRLS"},
 
 
     { artista: "Ay que desgracia",
-        url:"",
-        img:"url",
+        url:"./music/desgracia.mp3",
+        img:"./img/cancion-3",
         titulo:"Daveartt"},
 
 
     { artista: "Latin Mafia",
-        url:"",
-        img:"url",
-        titulo:"Otra vez"},
+        url:"./music/julieta.mp3",
+        img:"./img/cancion-4",
+        titulo:"Julieta"},
 
 
-    { artista: "uwu^^",
-        url:"",
-        img:"url",
+    { artista: "so so",
+        url:"./music/rusowsky.mp3",
+        img:"./img/cancion-5",
         titulo:"Rusowsky"}
 ];
 
@@ -62,10 +51,10 @@ const btnPausa = document.querySelector("#btnPausa");
 const btnTema3 = document.querySelector("#tema3");
 
 
-
 const audioPlayer = document.querySelector("audio"); 
 const divCanciones = document.querySelectorAll(".Lista-cancion");
 const divPlayingSong = document.querySelector("#playingSong");
+// const imagenesCanciones= document.querySelector("#imagenesCanciones");
 
 
 let idCancionActual = 0; //canción inicial 
@@ -90,10 +79,12 @@ function imprimirReproduciendo() {
     const artist = lista_canciones[idCancionActual].artista;
     // imagen = ListaImg[idCancionActual];
 
+    const img = lista_canciones[idCancionActual].img;
+
 
     console.log("Artista: " + artist + " Canción: " + song);
 
-    divPlayingSong.innerHTML = `<div> Canción: ${song} id ${idCancionActual} </br> Artista: ${artist}</div>`;
+    divPlayingSong.innerHTML = `<div> Canción: ${song} id ${idCancionActual} </br> Artista: ${artist} ${img}</div>`;
     //no ponenos += porque no queremos que agregue elementos en pantalla, sino qe queremos sobreescribir los temas que estamos escuchando 
 
 
@@ -122,6 +113,7 @@ btnSig.addEventListener("click", () => {
 
 imprimirReproduciendo();
 
+ 
 });
 
 
@@ -138,6 +130,10 @@ btnBack.addEventListener("click", () => {
     console.log(idCancionActual);
 
     imprimirReproduciendo();
+
+
+
+
 });
 
 
@@ -149,11 +145,6 @@ btnTema3.addEventListener("click", () => {
     imprimirReproduciendo();
 });
 
-
-
-
-
-//4.Su código
 
 
 
@@ -186,18 +177,10 @@ lista_canciones.forEach((cancion, i) => {
 
 
 
-//ej4
+
 document.addEventListener('click', (event) => {
     console.log(event.target.id);
 });
-
-
-
-//target te devuelve en consola el id porque está descrito en console.log (id)
-
-
-
-
 
 
 
@@ -218,21 +201,14 @@ divCanciones.forEach((divCancion, i) => {
 
 });
 
-// const imagen = ListaImg[i];
 
 
 
 
 
+// btnPausa.addEventListener("click", (handleReproducir)=>
 
 
-
-
-
-
-
-
-// btnPause.addEventListener("click", (handlereproducir)=>
 
 // )};
 
