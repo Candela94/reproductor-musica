@@ -80,11 +80,16 @@ function imprimirReproduciendo() {
     // imagen = ListaImg[idCancionActual];
 
     const img = lista_canciones[idCancionActual].img;
+   
+   
 
 
     console.log("Artista: " + artist + " Canción: " + song);
 
-    divPlayingSong.innerHTML = `<div> Canción: ${song} id ${idCancionActual} </br> Artista: ${artist} ${img}</div>`;
+    divPlayingSong.innerHTML = `<div> 
+    <img class imagenReproduciendo" src= "${img} alt="${song}"/>
+    Canción: ${song} id ${idCancionActual} </br> Artista: ${artist} ${img}
+    </div>`;
     //no ponenos += porque no queremos que agregue elementos en pantalla, sino qe queremos sobreescribir los temas que estamos escuchando 
 
 
