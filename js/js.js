@@ -111,7 +111,7 @@ function actualizarIsActive() {
     });
 
 
-    const cancionActual = document.getElementById("idCancionActual");
+    const cancionActual = document.getElementById(`${"idCancionActual"}`);
     if(cancionActual){
 
         cancionActual.classList.add('isActive');
@@ -128,6 +128,20 @@ function actualizarIsActive() {
 // -----------------------------------------
 
 
+// divCanciones.addEventListener("click",()=> {
+//     //actualizar idCancionActual de la cancion seleccionada
+//     idCancionActual=i;
+
+//     //eliminamos clase isActive
+//    divCanciones.forEach(song=> song.classList.remove('isActive'));
+
+
+
+//    divCanciones.classList.add('isActive');
+
+//    imprimirReproduciendo();
+
+// });
 
 
 
@@ -152,6 +166,8 @@ actualizarIsActive();
 });
 
 
+
+
 btnBack.addEventListener("click", () => {
 
     //preguntar si estoy en la primera cancion 
@@ -169,6 +185,12 @@ btnBack.addEventListener("click", () => {
 
 
 });
+
+
+
+
+
+
 
 
 
